@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 16px;
+    font-family: "Mulish", serif;
+}
+a{
+    text-decoration: none;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 46px 0;
+    border: 1px solid #EFF1FF;
+}
+.menu{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.menu a {
+    display: inline-block;
+    padding: 20px 25px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    background: transparent;
+}
+.menu a:hover{
+    border: 1px solid #EFF1FF;
+    background: #EFF1FF;
+}
+
+.menu li:hover > .sub-menu{
+    display: block;
+    position: absolute;
+    background-color: #FFF;
+    border: 1px solid #EFF1FF;
+    border-radius: 10px;
+    /* background: #EFF1FF; */
+}
+li{
+    list-style: none;
+}
+.sub-menu{
+    display: none;
+}
+
+.sub-menu p {
+    padding: 10px 20px;
+    font-size: 22px;
+    font-weight: 600px;
+    color: #000;
+}
+.sub-menu a{
+    display: inline-block;
+    padding: 12px 12px;
+    margin-top: 25px;
+}
+.sub-menu-box{
+    /* font-size: 14px; */
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 260px;
+}
+.user{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.user a {
+    display: inline-block;
+    padding: 20px 25px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: black;
+}
+.user button{
+    display:  inline-block;
+    background-color: white;
+    /* color: white; */
+   
+    padding: 20px 40px;
+    border: 1px solid white;
+}
+.user button:hover{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
