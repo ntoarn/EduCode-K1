@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: "Mulish", serif;
+}
+
+section {
+    background-color: #E6EAF8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+
+}
+
+.header {
+    display: inline-flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+h1{
+    padding-bottom: 24px;
+}
+
+.search-nav {
+    display: flex;
+    width: 327px;
+    padding: 12px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--bfc-8-e-6, #BFC8E5);
+    margin-right: 200px;
+}
+
+.search-nav input {
+    border: none;
+    outline: none;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.tabs a {
+    display: inline-block;
+    padding: 12px 12px;
+    /* margin-right: 40px; */
+    font-size: 20px;
+    color: black;
+}
+
+.tabs a:hover {
+    background-color: #849FFF;
+    border-radius: 10px;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.users {
+    display: flex;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    gap: 10px;
+    /* max-width: 800px; */
+    margin: 0 auto;
+}
+
+.card-user {
+    display: flex;
+    width: 327px;
+    height: 208px;
+    padding: 24px;
+    align-items: flex-start;
+    gap: 16px;
+
+}
+
+.card-user:hover {
+    border-radius: 16px;
+    border: 1px solid #BFC8E5;
+    background: #FBFCFF;
+    box-shadow: 0px 8px 23px 0px rgba(218, 224, 249, 0.70);
+}
+
+.user-infor h3 {
+    color: var(--151-b-32, #151B32);
+    font-family: Merriweather;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    padding-bottom: 4px;
+}
+
+.user-infor p {
+    color: var(--151-b-32, #151B32);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-bottom: 16px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+}
+
+.tag {
+    border-radius: 10px;
+    border: 2px solid var(--bfc-8-e-6, #BFC8E5);
+    background-color: #fff;
+    color: #516FD4;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
