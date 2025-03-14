@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: "Mulish", serif;
+}
+
+.banner-1 {
+    text-align: center;
+}
+
+.banner-1 img {
+    max-width: 100%;
+
+    margin-bottom: 20px;
+}
+
+header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    width: 200px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menu a {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 20px;
+    color: black;
+    font-weight: 600;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.content {
+    padding: 20px 20px;
+    /* background-color: #0E4C67;   */
+}
+
+.content img {
+    width: 328px;
+    height: 370px;
+    flex-shrink: 0;
+    
+}
+
+.content h4 {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding: 15px;
+    background-color: #0E4C67;
+    margin-bottom: 20px;
+    width: 328px;
+    height: 80px;
+    flex-shrink: 0;
+    margin-top: -4px;
+}
+
+.banner-2  {
+    text-align: center;
+    width: 100%;
+}   
+.banner-2 iframe{
+    width: 80%;
+}
+
+footer{
+ display: flex;
+ background-color: #0E4C67;
+ justify-content:space-between;
+ align-items: center;
+ padding: 24px 24px;
+ margin: 24px 182px;
+ /* text-align: center; */
+}
+p{
+
+}
+
+
+.search-footer input{
+    height: 50px;
+    width: 278px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px;
+    /* stroke-width: 2px; */
+    /* stroke: #FFA800; */
+    border: 1px solid #FFA800;
+}
+.search-footer button{
+    display: inline-flex;
+    height: 50px;
+    align-items: center;
+    background-color: #FFA800;
+    color: white;
+    padding: 0 15px;
+    border-radius: 5px;
+    gap: 10px;
+    flex-shrink: 0;
+}
