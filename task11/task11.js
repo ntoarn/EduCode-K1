@@ -15,6 +15,3 @@ function isTriangle(a, b, c) {
     return true
   }
   console.log(isTriangle(a, b, c))
-//   // Test cases:
-//   console.log(isTriangle(3, 4, 5)); // true
-//   console.log(isTriangle(3, 4, 7)); // false
