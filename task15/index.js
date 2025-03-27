@@ -9,7 +9,7 @@ function isSameSign(a, b) {
     return false
     // Viết logic kiểm tra 2 số cùng dấu ở đây
   }
-  console.log(isSameSign(a, b))
+  document.writeln(isSameSign(a, b))
   // Test cases
 //   isSameSign(10, 20); // true
 //   isSameSign(-10, -20); // true

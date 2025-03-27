@@ -16,7 +16,7 @@ function printPrimeNumber(n) {
             }
         }
         if(Prime){
-            console.log(i)
+            document.writeln(`${i}`)
         }
   }
 }
