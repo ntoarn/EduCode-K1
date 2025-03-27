@@ -1,6 +1,6 @@
-// const a = parseFloat(prompt("Nhập a:"))
-// const b = parseFloat(prompt("Nhập b:"))
-// const c = parseFloat(prompt("Nhập c:"))
+const a = parseFloat(prompt("Nhập a:"))
+const b = parseFloat(prompt("Nhập b:"))
+const c = parseFloat(prompt("Nhập c:"))
 
 // Input:
 function findMaxNumber(a, b, c) {
@@ -14,5 +14,4 @@ function findMaxNumber(a, b, c) {
   }
   
   // Output:
-  document.writeln(findMaxNumber(2, 1, 6))
-console.log(findMaxNumber(2, 1, 6))
+  document.writeln(findMaxNumber(a, b, c))
