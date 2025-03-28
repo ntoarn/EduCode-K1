@@ -20,9 +20,10 @@ function taxSalary(salary) {
         document.writeln(`Số  tiền thuế bạn phải đóng là: ${STNT}`)
         return
     } else if( salary > 80000000 ){
-        // STNT = (25000000 - 11000000) * 0.05 + (50000000 - 25000000) *0.1 + (80000000 - 50000000) * 0.20 + (salary * 0.30)
-        document.writeln(`Số  tiền thuế bạn phải đóng là: ${salary * 0.30}`)
-        return
+        STNT = (25000000 - 11000000) * 0.05 + (50000000 - 25000000) *0.1 + (80000000 - 50000000) * 0.20 + (salary - 80000000 )* 0.30
+        document.writeln(`Số  tiền thuế bạn phải đóng là: ${STNT}`)
+        // document.writeln(`Số  tiền thuế bạn phải đóng là: ${salary * 0.30}`)
+        // return
     }
   }
   
