@@ -8,17 +8,15 @@ function taxiBill(km) {
     } else if( km <= 1){
         document.writeln(`Số tiền cần trả: 10000đ`)
         return
-    } else if( 1 < km <= 30){
-        document.writeln(`Số tiền cần trả cho ${km} km là: ${(km - 1)*8000 + 10000}`)
+    } else if( 1 < km && km <= 30){
+        document.writeln(`Số tiền cần trả cho ${km} km là: ${ 10000 + (km - 1)*8000 }`)
         return;
     } else {
-        document.writeln(`Số tiền cần trả cho ${km} km là: ${(29*8000) + (km - 30)*7000 + 10000}`)
-        console.log(km)
+        document.writeln(`Số tiền cần trả cho ${km} km là: ${ 10000 +  (29 * 8000) + (km - 30) * 7000}`)
+        // console.log(km)
         return
     } 
    
-
-    // Xử lý và in ra kết quả
   }
 taxiBill(km)
   // Test:

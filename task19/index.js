@@ -7,7 +7,13 @@ function printIsoscelesTriangle(n, character) {
         for (let j = 0; j < 2 * i - 1; j++) {
             line += character
         }
-        console.log(line)
+    console.log(line)
     }
+    let truck = ""
+    for(let k = 0; k < n- 1; k ++){
+        truck += " "
+    }
+    truck += character
+    console.log(truck)
 }
-printIsoscelesTriangle(5, "*");
+printIsoscelesTriangle(6, "*");
