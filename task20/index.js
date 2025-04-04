@@ -10,7 +10,7 @@ function printChristmasTree(n, character) {
     console.log(line)
     }
     let truck = ""
-    for(let k = 0; k < n- 1; k ++){
+    for(let k = 0; k < n - 1; k ++){
         truck += " "
     }
     truck += character
