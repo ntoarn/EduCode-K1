@@ -2,11 +2,9 @@ const arrNumber = [1, 2, 3, 4, 5, 5, null, undefined, 6];
 
 function reverseArr(arr) {
     const result = []
-    const arrLength = new Set()
     for (let i = arr.length - 1; i >= 0; i--) {
-        if (typeof arr[i] === "number" && !arrLength.has(arr[i])) {
+        if (typeof arr[i] === "number" && !result.includes(arr[i])) {
             result.push(arr[i])
-            arrLength.add(arr[i])
         }
     }
     return result;
