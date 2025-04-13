@@ -8,7 +8,6 @@ function reverseArr(arr) {
         }
     }
     return result;
-
     // Xử lý và in ra kết quả
 }
 const result = reverseArr(arrNumber);

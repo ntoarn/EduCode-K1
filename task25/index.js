@@ -1,4 +1,4 @@
-// Input:
+// • // Input:
 const fruits = [
     "apple",
     "banana",
