@@ -31,3 +31,8 @@ console.log(result); // 850
 
 const result2 = calculateTotalCompletedAmount(orders, 100);
 console.log(result2); // 1120
+
+
+const numbers = [
+  
+]

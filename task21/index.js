@@ -86,7 +86,7 @@ function findMinMaxAverage(arr) {
     const primeNumbers = arr.filter(isPrime)
     // console.log(primeNumbers)
     if (primeNumbers.length === 0) return 0
-    const sum = primeNumbers.reduce((acc, val) => acc + val, 0)
+    const sum = primeNumbers.reduce((acc, val) => acc + val, 0  )
     return { max, maxIndex, min, minIndex, primeAverage: sum / primeNumbers.length }
     // Xử lý và in ra kết quả
 }
