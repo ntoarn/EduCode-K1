@@ -16,7 +16,6 @@ table.innerHTML  = `
     </thead>
     <tbody>
     ${students.map((student , index) => (
-
     `<tr>
     <td>${student.id}</td>
     <td>${student.name}</td>
