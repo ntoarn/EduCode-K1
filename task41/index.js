@@ -9,7 +9,7 @@ let todoSave = JSON.parse(localStorage.getItem("todos") || "[]")
 
 function handleViewTodo(todos){
     tBodyElement.innerText = ""
-    todos.map(item => {
+    todos.reverse().map(item => {
         let trElement = document.createElement("tr")
         trElement.innerHTML = `
             <td>${item.id}</td>
@@ -27,6 +27,7 @@ function handleViewTodo(todos){
     })
 }
 handleViewTodo(todoSave)
+
 let todoUpdate = {
     id: null
 }
