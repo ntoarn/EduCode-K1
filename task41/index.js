@@ -4,6 +4,7 @@ const descriptionElement = document.getElementById("description");
 const btnResetElement = document.getElementById("btn-reset");
 const btnAddElement = document.getElementById("add-btn");
 const tBodyElement = document.getElementById("tBody");
+const errElement = document.getElementById("error")
 let todoSave = JSON.parse(localStorage.getItem("todos") || "[]")
 
 function handleViewTodo(todos){
@@ -15,8 +16,8 @@ function handleViewTodo(todos){
             <td>${item.title}</td>
             <td>${item.description}</td>
             <td>
-            <p class="${item.status ? "completed" : "pending"}" onclick="toggleStatus('${item.id}')">${item.status ? "Đã hoàn thành" : "Chưa hoàn thành"} </p>
-</td>
+            <p class="${item.status ? "completed" : "active"}" onclick="toggleStatus('${item.id}')">${item.status ? "Đã hoàn thành" : "Chưa hoàn thành"}</p>
+            </td>
             <td>
                 <button onclick="updateTodo('${item.id}')" class="btn btn-success">Cập nhập</button>
                 <button onclick="removeTodo('${item.id}')" class="btn btn-danger">Xóa</button>
@@ -26,16 +27,50 @@ function handleViewTodo(todos){
     })
 }
 handleViewTodo(todoSave)
-
+let todoUpdate = {
+    id: null
+}
 todoFormElement.addEventListener("submit", function (event){
     event.preventDefault();
-    const todo = {
-        id: generateId(4, "todo-"),
-        title: titleElement.value,
-        description: descriptionElement.value,
-        status: false,
+    let message = []
+    if (titleElement.value === "" || titleElement.value == null){
+        message.push("Không được bỏ trống")
+        titleElement.classList.add("input-error")
     }
-    todoSave.push(todo)
+    if(titleElement.value.length < 5){
+        message.push("Phải nhiều hơn 5 kí tự")
+        titleElement.classList.add("input-error")
+
+    }
+    if(message.length > 0){
+        errElement.innerText = message.join(", ")
+        titleElement.classList.add("input-error")
+
+        return
+    }
+    if(todoUpdate.id){
+        const todo = {
+            ...todoUpdate,
+            title: titleElement.value,
+            description: descriptionElement.value,
+        }
+        todoSave = todoSave.map((item) => {
+            if(item.id === todoUpdate.id){
+                 return todo
+            }
+            return item
+        })
+        handleViewTodo(todoSave)
+    }else {
+        const todo = {
+            id: generateId(4, "todo-"),
+            title: titleElement.value,
+            description: descriptionElement.value,
+            status: false,
+        }
+        errElement.innerText = ""
+        todoSave.push(todo)
+    }
     localStorage.setItem("todos", JSON.stringify(todoSave))
     handleViewTodo(todoSave)
     resetForm()
@@ -51,7 +86,6 @@ function generateId(length, prefix){
     }
     return `${prefix}${newId}`
 }
-
 generateId(4, "todo-")
 
 function toggleStatus(id){
@@ -62,24 +96,40 @@ function toggleStatus(id){
         return item
     })
     handleViewTodo(todoSave)
+    localStorage.setItem("todos", JSON.stringify(todoSave))
 }
 handleViewTodo(todoSave)
 
 function removeTodo(id){
-    alert("Bạn chắc chưa???????///???//")
-    todoSave = todoSave.filter((item) => item.id !== id)
-    handleViewTodo(todoSave)
-    localStorage.setItem("todos", JSON.stringify(todoSave))
+    if(window.confirm("Chắc chắn xóa chưa ????????????")){
+        todoSave = todoSave.filter((item) => item.id !== id)
+        handleViewTodo(todoSave)
+        localStorage.setItem("todos", JSON.stringify(todoSave))
+    }
+
 }
 handleViewTodo(todoSave)
 
 function resetForm(){
     todoFormElement.reset()
+    btnAddElement.innerText = "Thêm"
 }
 function updateTodo(id){
     btnAddElement.innerText = "Sửa"
-    const todo = todoSave.find((item) => item.id === id)
-    console.log(todo)
-    titleElement.value = todo.title
-    descriptionElement.value = todo.description
+     todoUpdate = todoSave.find((item) => item.id === id)
+    console.log(todoUpdate)
+    titleElement.value = todoUpdate.title
+    descriptionElement.value = todoUpdate.description
+}
+
+function filterTodos(filterValue){
+    let todos = []
+    if(filterValue === "all"){
+        todos = todoSave
+    }else if(filterValue === "active"){
+        todos = todoSave.filter((item) => item.status === false)
+    }else if(filterValue === "completed"){
+        todos = todoSave.filter((item) => item.status === true)
+    }
+    handleViewTodo(todos)
 }
