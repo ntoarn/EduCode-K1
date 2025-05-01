@@ -45,32 +45,51 @@ todoFormElement.addEventListener("submit", function (event){
     if(message.length > 0){
         errElement.innerText = message.join(", ")
         titleElement.classList.add("input-error")
-
         return
     }
+    // if(todoUpdate.id){
+    //     const todo = {
+    //         ...todoUpdate,
+    //         title: titleElement.value,
+    //         description: descriptionElement.value,
+    //     }
+    //     todoSave = todoSave.map((item) => {
+    //         if(item.id === todoUpdate.id){
+    //              return todo
+    //         }
+    //         return item
+    //     },{})
+    //     handleViewTodo(todoSave)
+    // }else {
+    //     const todo = {
+    //         id: generateId(4, "todo-"),
+    //         title: titleElement.value,
+    //         description: descriptionElement.value,
+    //         status: false,
+    //     }
+    //     errElement.innerText = ""
+    //     todoSave.push(todo)
+    // }
     if(todoUpdate.id){
-        const todo = {
-            ...todoUpdate,
-            title: titleElement.value,
-            description: descriptionElement.value,
-        }
-        todoSave = todoSave.map((item) => {
-            if(item.id === todoUpdate.id){
-                 return todo
+        const id = todoSave.findIndex((item) => item.id === todoUpdate.id)
+            const updateTodo = {
+                ...todoUpdate,
+                title: titleElement.value,
+                description: descriptionElement.value,
             }
-            return item
-        },{})
-        handleViewTodo(todoSave)
-    }else {
-        const todo = {
-            id: generateId(4, "todo-"),
-            title: titleElement.value,
-            description: descriptionElement.value,
-            status: false,
-        }
-        errElement.innerText = ""
-        todoSave.push(todo)
+            todoSave.splice(id , 1, updateTodo)
+            handleViewTodo(todoSave)
+            resetForm()
+            return;
     }
+    const todo = {
+        id: generateId(4, "todo-"),
+        title: titleElement.value,
+        description: descriptionElement.value,
+        status: false,
+    }
+    errElement.innerText = ""
+    todoSave.push(todo)
     localStorage.setItem("todos", JSON.stringify(todoSave))
     handleViewTodo(todoSave)
     resetForm()
