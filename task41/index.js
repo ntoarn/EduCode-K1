@@ -59,7 +59,7 @@ todoFormElement.addEventListener("submit", function (event){
                  return todo
             }
             return item
-        })
+        },{})
         handleViewTodo(todoSave)
     }else {
         const todo = {
@@ -122,13 +122,13 @@ function updateTodo(id){
     descriptionElement.value = todoUpdate.description
 }
 
-function filterTodos(filterValue){
+function filterTodos(status){
     let todos = []
-    if(filterValue === "all"){
+    if(status === "all"){
         todos = todoSave
-    }else if(filterValue === "active"){
+    }else if(status === "active"){
         todos = todoSave.filter((item) => item.status === false)
-    }else if(filterValue === "completed"){
+    }else if(status === "completed"){
         todos = todoSave.filter((item) => item.status === true)
     }
     handleViewTodo(todos)
