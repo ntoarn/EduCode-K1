@@ -34,8 +34,10 @@ getUser(1, (user) => {
             return acc
         },0)
         console.log("Bài 1 callback tổng giá trị sản phẩm:", total)
-        getProductDetails(purchases[0].id, purchases[0].product, (productDetail) =>{
-            console.log("Bài 1 callback:",productDetail)
+        purchases.map((product) => {
+            getProductDetails(product.id, product.product, (productDetail) =>{
+                console.log("Bài 1 callback:",productDetail)
+            })
         })
     })
 })

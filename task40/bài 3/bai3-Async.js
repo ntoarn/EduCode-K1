@@ -39,8 +39,14 @@ async function getDataAsync (){
             return acc
         },0)
         console.log("Bài 3 - Async/Await tổng giá trị sản phẩm:", total)
-        const getProductDetail = await getProductDetailsAsync(getPurchases[0].id, getPurchases[0].product)
-        console.log("Bài 3 - Async/Await:", getProductDetail)
+        const getProductDetail = await Promise.all(
+            getPurchases.map((product) => {
+                return getProductDetailsAsync(product.id, product.product)
+            })
+        )
+        getProductDetail.map((products) => {
+            console.log("Bài 3 - Async/Await:", products)
+        })
     } catch (error) {
         console.error(error);
     }

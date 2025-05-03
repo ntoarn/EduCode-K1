@@ -38,9 +38,11 @@ getUserPromise(1).then((user) => {
                     return acc
                 },0)
                 console.log("Bài 2 - Promise tổng giá trị sản phẩm:", total)
-                return getProductDetailsPromise(purchases[0].id, purchases[0].product)
-                    .then((productDetail) => {
-                        console.log("Bài 2 - Promise:",productDetail)
-                    })
+                return purchases.map((product) => {
+                    getProductDetailsPromise(product.id, product.product)
+                        .then((productDetail) => {
+                            console.log("Bài 2 - Promise:",productDetail)
+                        })
+                })
             })
 })
