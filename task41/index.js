@@ -81,6 +81,7 @@ todoFormElement.addEventListener("submit", function (event){
             todoSave.splice(id , 1, updateTodo)
             handleViewTodo(todoSave)
             resetForm()
+            localStorage.setItem("todos", JSON.stringify(todoSave))
             return;
     }
     const todo = {
