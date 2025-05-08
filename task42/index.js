@@ -138,9 +138,9 @@ function hocluc(toan, tienganh, khoahoc){
     } else if(diemTB >= 6.5){
         return "Khá"
     } else if(diemTB >= 5 ){
-        return "Yếu"
+        return "Trung bình"
     } else {
-        return "Kém"
+        return "Yếu"
     }
 }
 
@@ -170,7 +170,7 @@ function resetForm(){
 }
 
 searchElement.addEventListener("input" ,function (e){
-    const value = e.target.value.toLowerCase()
+    const value = e.target.value.toLowerCase().normalize("NFC")
     const data = dataStudent.filter((item) => item.name.toLowerCase().includes(value))
     handlView(data)
 })
