@@ -1,0 +1,20 @@
+#err-name{
+    color: red;
+}
+#err-diemToan{
+    color: red;
+}
+
+#err-diemTiengAnh{
+    color: red;
+}
+
+#err-diemKhoaHoc{
+    color: red;
+}
+
+
+
+.input-error {
+    border: 2px solid red !important;
+}

@@ -10,17 +10,27 @@
 <body>
 <div class="todo-container">
     <h1>Danh Sách Công Việc</h1>
+    //chiều nay có 1 đề thôi là dạng bài kiểu như bài này , nhuwng mà nhiều câu hỏi trong í làm hết cái a đông bảo làm hom lọ thìdđược 5 điểm
 
     <form id="todoForm">
         <div class="mb-3">
             <label for="" class="form-label">Việc cần làm</label>
-            <input type="text" name="title" class="form-control" id="title" placeholder="Nhập công việc"  >
+            <input  type="text" name="title" class="form-control" id="title" placeholder="Nhập công việc"  >
             <div id="error"></div>
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Mô tả</label>
             <input type="text" name="description" class="form-control" id="description" placeholder="Mô tả"  >
         </div>
+        <div class="mb-3">
+            <label for="difficulty" class="form-label">Độ khó</label>
+            <select class="form-select" name="sort" id="difficulty">
+                <option value="dễ">Dễ</option>
+                <option value="trung bình">Trung bình</option>
+                <option value="khó">Khó</option>
+            </select>
+        </div>
+
         <div class="group-btn mb-3">
             <button id="add-btn" class="btn btn-primary">Thêm mới</button>
             <button id="reset-btn" class="btn btn-danger" type="button" onclick="resetForm()">Làm mới</button>
@@ -32,12 +42,17 @@
         <button onclick="filterTodos('completed')">Hoàn thành</button>
     </div>
     <ul class="todo-list" id="todoList"></ul>
+    <div class="sort-section">
+        <button onclick="sortByDifficulty()">Sắp xếp theo độ khó</button>
+    </div>
+
     <table class="table table-striped">
         <thead>
         <tr>
             <th>Id</th>
             <th>Tên công việc</th>
             <th>Mô tả công việc</th>
+            <!-- <th>Độ khó</th>     -->
             <th>Trạng thái</th>
             <th></th>
         </tr>
@@ -50,7 +65,7 @@
     </table>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-<script src="./index.js"></script>
-<!--<script src="./test2.js"></script>-->
+<!--<script src="./index.js"></script>-->
+<script src="./test2.js"></script>
 </body>
 </html>

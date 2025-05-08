@@ -6,7 +6,7 @@ const btnAddElement = document.getElementById("add-btn");
 const tBodyElement = document.getElementById("tBody");
 const errElement = document.getElementById("error")
 let todoSave = JSON.parse(localStorage.getItem("todos") || "[]")
-
+const difficultyElement = document.getElementById("difficulty");
 function handleViewTodo(todos){
     tBodyElement.innerText = ""
     todos.map(item => {
@@ -15,6 +15,7 @@ function handleViewTodo(todos){
             <td>${item.id}</td>
             <td>${item.title}</td>
             <td>${item.description}</td>
+              <td>${item.difficulty || "Không có"}</td>
             <td>
             <p class="${item.status ? "completed" : "active"}" onclick="toggleStatus('${item.id}')">${item.status ? "Đã hoàn thành" : "Chưa hoàn thành"}</p>
             </td>
@@ -77,6 +78,7 @@ todoFormElement.addEventListener("submit", function (event){
                 ...todoUpdate,
                 title: titleElement.value,
                 description: descriptionElement.value,
+                difficulty: difficultyElement.value,
             }
             todoSave.splice(id , 1, updateTodo)
             handleViewTodo(todoSave)
@@ -89,6 +91,7 @@ todoFormElement.addEventListener("submit", function (event){
         title: titleElement.value,
         description: descriptionElement.value,
         status: false,
+        difficulty: difficultyElement.value,
     }
     errElement.innerText = ""
     todoSave.push(todo)
@@ -153,4 +156,11 @@ function filterTodos(status){
         todos = todoSave.filter((item) => item.status === true)
     }
     handleViewTodo(todos)
+}
+function sortByDifficulty() {
+    const order = ["dễ", "trung bình", "khó"];
+    const sortedTodos = [...todoSave].sort((a, b) => {
+        return order.indexOf(a.difficulty) - order.indexOf(b.difficulty);
+    });
+    handleViewTodo(sortedTodos);
 }
