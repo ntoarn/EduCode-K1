@@ -170,7 +170,7 @@ function resetForm(){
 }
 
 searchElement.addEventListener("input" ,function (e){
-    const value = e.target.value
+    const value = e.target.value.toLowerCase()
     const data = dataStudent.filter((item) => item.name.toLowerCase().includes(value))
     handlView(data)
 })
