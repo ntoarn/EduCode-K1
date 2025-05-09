@@ -161,12 +161,17 @@ function  update(id){
     toanELement.value = updateStudent.toan
     tiengAnhElement.value = updateStudent.tienganh
     khoaHocElement.value = updateStudent.khoahoc
+
+    nameElement.setAttribute("readonly", true)
 }
 
 function resetForm(){
     formElement.reset()
     btnAddElement.innerText = "Thêm mới "
-
+    nameElement.removeAttribute("readonly")
+    updateStudent = {
+        id : null
+    }
 }
 
 searchElement.addEventListener("input" ,function (e){
