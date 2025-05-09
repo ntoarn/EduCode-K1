@@ -173,9 +173,9 @@ function resetForm(){
         id : null
     }
 }
-
+// .normalize("NFC")
 searchElement.addEventListener("input" ,function (e){
-    const value = e.target.value.toLowerCase().normalize("NFC")
+    const value = e.target.value.toLowerCase()
     const data = dataStudent.filter((item) => item.name.toLowerCase().includes(value))
     handlView(data)
 })
