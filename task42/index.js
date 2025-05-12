@@ -116,7 +116,7 @@ formElement.addEventListener("submit", function (e){
       const data = {
           id: randomId((3), "student-"),
           name: nameElement.value,
-          toan:  toanELement.value,
+          toan: toanELement.value,
           tienganh: tiengAnhElement.value,
           khoahoc: khoaHocElement.value,
           diemTB: diemTrungBinh(toanELement.value, tiengAnhElement.value, khoaHocElement.value),
