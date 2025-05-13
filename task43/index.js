@@ -60,7 +60,7 @@ fetch("https://dummyjson.com/products")
         let page = 1
         let limit = 12;
         let skip = (page - 1) * limit
-        let totalProduct
+        let totalProduct = 0
           const fetchProduct =  async (limit = 12, skip = 0) => {
             try {
                 const res = await  fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`)
@@ -72,7 +72,7 @@ fetch("https://dummyjson.com/products")
             }
           }
           fetchProduct()
-          currentElement.innerText = page
+          currentElement.innerText = skip / limit + 1
 
         preElement.addEventListener("click", function (e){
             if(page > 1){
