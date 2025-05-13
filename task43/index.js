@@ -4,6 +4,7 @@
     const preElement = document.getElementById("prev-btn")
     const nextElement = document.getElementById("next-btn")
     const currentElement = document.getElementById("current-page")
+    const paninationElement = document.getElementById("pagination")
     let dataProducts = []
     let page = 1
     let limit = 12;
@@ -81,6 +82,7 @@
         </div>
             
             `
+            paninationElement.style.display = "none"
         })
     }
 
@@ -146,11 +148,18 @@
     })
 
     function reset(){
+        paninationElement.style.display = "flex"
+
         apiElement.innerHTML = ''
         searchElement.value = ''
         sortElement.value = ''
         preElement.disabled = true
         nextElement.disabled = true
         currentElement.innerText = ''
+        page = 1;
+        skip = (page - 1) * limit;
+        currentElement.innerText = page;
+        fetchProduct(limit, skip)
+
         handleViewProduct(dataProducts)
     }
